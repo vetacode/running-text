@@ -1,0 +1,147 @@
+<style>
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    padding: 12px 0;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* FADE LEFT */
+  .marquee::before,
+  .marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .marquee::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(37, 99, 235, 1),
+      rgba(37, 99, 235, 0)
+    );
+  }
+
+  /* FADE RIGHT */
+  .marquee::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(6, 182, 212, 1),
+      rgba(6, 182, 212, 0)
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .marquee-content span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding-right: 24px;
+  }
+
+  .marquee a {
+    text-decoration: none;
+  }
+
+  .request {
+    color: goldenrod;
+  }
+
+  /* BLINK CTA */
+  .blink {
+    animation: glowBlink 1.2s infinite;
+    font-weight: 800;
+  }
+  @keyframes glowBlink {
+    0%,
+    100% {
+      color: #ffd700;
+      text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px goldenrod;
+    }
+    50% {
+      color: #fff;
+      text-shadow: none;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  /* LOOP MULUS */
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <a
+        href="https://wa.me/6281384072641?text=Halo%2C%20saya%20cari%20Vendor%20dan%20Produk%20Baru,%20bisa%20dibantu?"
+        target="_blank"
+      >
+        <span class="request">
+          Request Vendor/Produk yang Anda Cari?
+          <span class="blink">Klik Disini</span> |
+        </span>
+
+        <span
+          >Selamat Datang di CariSolusi | Berbagai Vendor dalam Satu Platform |
+          Temukan Vendor Terpercaya untuk Semua Kebutuhan Anda |</span
+        >
+      </a>
+    </div>
+
+    <div class="marquee-content">
+      <a
+        href="https://wa.me/6281384072641?text=Halo%2C%20saya%20cari%20Vendor%20dan%20Produk%20Baru,%20bisa%20dibantu?"
+        target="_blank"
+      >
+        <span class="request">
+          Request Vendor/Produk yang Anda Cari?
+          <span class="blink">Klik Disini</span> |
+        </span>
+
+        <span
+          >Selamat Datang di CariSolusi | Berbagai Vendor dalam Satu Platform |
+          Temukan Vendor Terpercaya untuk Semua Kebutuhan Anda |</span
+        >
+      </a>
+    </div>
+  </div>
+</div>
+
+<br />
