@@ -31,7 +31,7 @@ The animation is hardware-accelerated and optimized using:
 will-change: transform;``
 
 
-Key Features
+## Key Features
 1. Smooth Infinite Scrolling
 
 The animation transitions from translateX(0) to translateX(-50%), ensuring seamless looping without visible jumps.
