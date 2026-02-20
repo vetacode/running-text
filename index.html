@@ -46,6 +46,10 @@
     will-change: transform;
   }
 
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
   .marquee-content {
     display: flex;
     align-items: center;
@@ -103,6 +107,28 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .marquee {
+      padding: 8px 0;
+      border-radius: 20px;
+    }
+
+    .marquee-content span {
+      font-size: 14px;
+      padding-right: 16px;
+    }
+
+    .marquee::before,
+    .marquee::after {
+      width: 30px;
+    }
+
+    .marquee-track {
+      animation: marquee-scroll 25s linear infinite;
     }
   }
 </style>
